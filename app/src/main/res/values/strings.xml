@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">CyrrencyX</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="valid_date">Please ensure the date you pick is no later than yesterday to avoid errors</string>
+</resources>
