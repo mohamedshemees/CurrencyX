@@ -2,17 +2,15 @@ package com.example.myapplication.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.LayoutInflater;
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.BaseAdapter
-import android.widget.ImageView;
-import android.widget.TextView;
-import com.example.myapplication.CurreenciesInfo
-import com.example.myapplication.R
+import com.example.myapplication.databinding.CurrncyListItemBinding
+import com.example.myapplication.utils.CurrenciesInfo
 
-class SpinnerCustomAdapter  (private val context: Context,val items:List<CurreenciesInfo>)
-    : BaseAdapter() {
+class SpinnerCustomAdapter(val items: List<CurrenciesInfo>) :
+    BaseAdapter() {
 
 
     override fun getCount(): Int = items.size
@@ -22,29 +20,32 @@ class SpinnerCustomAdapter  (private val context: Context,val items:List<Curreen
 
     @SuppressLint("ViewHolder")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        val inflater = LayoutInflater.from(context)
-        val view = inflater.inflate(R.layout.currncy_list_item, parent, false)
+        val binding = CurrncyListItemBinding.inflate(LayoutInflater.from(parent?.context))
+        val currencyInfo = getItem(position) as CurrenciesInfo
+        val flag = binding.flag
+        val text = binding.currency
+        val country = binding.country
 
-        val item = getItem(position) as CurreenciesInfo
-        val icon = view.findViewById<ImageView>(R.id.flag)
-        val text = view.findViewById<TextView>(R.id.currency)
-
-        icon.setImageResource(item.flag)
-        text.text = item.appreviation
-        return view
+        country.text = currencyInfo.country
+        flag.setImageResource(currencyInfo.flag)
+        text.text = currencyInfo.appreviation
+        return binding.root
     }
 
-    override fun getDropDownView(position: Int,  convertView: View?, parent: ViewGroup?): View {
-        val view :View
-        view=super.getDropDownView(position, convertView, parent)
-        view.visibility=View.VISIBLE
-        val item = getItem(position) as CurreenciesInfo
-        val icon = view.findViewById<ImageView>(R.id.flag)
-        val text = view.findViewById<TextView>(R.id.currency)
-        icon.setImageResource(item.flag)
-        text.text = item.appreviation
+    override fun getDropDownView(position: Int, convertView: View?, parent: ViewGroup?): View {
+        val view: View = super.getDropDownView(position, convertView, parent)
+        view.visibility = View.VISIBLE
+        val binding = CurrncyListItemBinding.inflate(LayoutInflater.from(parent?.context))
+        val currencyInfo = getItem(position) as CurrenciesInfo
+        val flag = binding.flag
+        val text = binding.currency
+        val country = binding.country
 
-        return view
+        country.text = currencyInfo.country
+        flag.setImageResource(currencyInfo.flag)
+        text.text = currencyInfo.appreviation
+
+        return binding.root
 
     }
 

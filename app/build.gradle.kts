@@ -13,7 +13,7 @@ android {
     defaultConfig {
         applicationId = "com.example.myapplication"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -36,11 +36,7 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
-//    buildFeatures {
-//        //noinspection DataBindingWithoutKapt
-//       // dataBinding =true
-//        viewBinding = true
-//    }
+
     viewBinding {
         enable = true
     }
@@ -62,8 +58,14 @@ dependencies {
     implementation(libs.androidx.appcompat)
 
     testImplementation(libs.junit)
+    testImplementation(libs.junit.jupiter)
+    testImplementation ("org.mockito:mockito-core:4.0.0")
+    testImplementation ("org.mockito.kotlin:mockito-kotlin:4.0.0")
+
+
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation ("androidx.test.espresso:espresso-core:3.5.0")
+
 
    /* implementation(libs.ktor.server.netty)*/
     implementation(libs.ktor.client.core)
@@ -73,15 +75,16 @@ dependencies {
     implementation (libs.retrofit )// Retrofit
     implementation (libs.converter.gson) // Gson converter for Retrofit
 
-//    implementation (libs.hilt.android )// Hilt
-//
-//    kapt            (libs.hilt.android.compiler) // Hilt compiler
+
     implementation(libs.androidx.lifecycle.viewmodel.ktx )// ViewModel
     implementation(libs.androidx.lifecycle.runtime.ktx) // LiveData
 
     implementation("androidx.fragment:fragment-ktx:1.6.2")
 
+    implementation ("com.jakewharton.threetenabp:threetenabp:1.4.6")
+
     implementation(project(":data"))
     implementation(project(":domain"))
+    androidTestImplementation(libs.junit.jupiter)
 
 }

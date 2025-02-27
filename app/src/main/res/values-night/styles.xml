@@ -1,7 +1,18 @@
 <resources>
 
     <style name="Widget.Theme.MyApplication.MyView" parent="">
-        <item name="android:background">@color/white</item>
-        <item name="exampleColor">@color/light_blue_600</item>
+        <item name="android:background">@color/gray_400</item>
+        <item name="exampleColor">@color/primary_color</item>
     </style>
+
+    <style name="Calendderthem" parent="ThemeOverlay.Material3.MaterialCalendar">
+        <item name="colorPrimary">@color/primary_color</item>
+        <item name="materialCalendarStyle">@style/Widget.MaterialComponents.MaterialCalendar</item>
+        <item name="materialCalendarFullscreenTheme">@style/ThemeOverlay.MaterialComponents.MaterialCalendar.Fullscreen</item>
+        <item name="materialCalendarTheme">@style/ThemeOverlay.MaterialComponents.MaterialCalendar</item>
+
+    </style>
+
+
+
 </resources>
