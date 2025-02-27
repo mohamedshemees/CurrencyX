@@ -1,4 +1,3 @@
- CurrencyX - Currency Price Tracker
 
 **CurrencyX** is a mobile application that allows users to track real-time currency prices using a reliable API. The app provides an intuitive interface to view exchange rates for various currencies.
 
@@ -16,5 +15,11 @@
 
 **CurrencyX** is the perfect tool for anyone needing up-to-date exchange rates at their fingertips.
 
-## Screenshots
-![CurrencyX](https://github.com/user-attachments/assets/c4622dea-a7af-481b-aa70-eed2e132efc5)
+## Demo
+![GIF_20250227_01](https://github.com/user-attachments/assets/ab8aaf29-79a1-451b-8962-5cb8750181ed)
+
+**🚀 Future Enhancements**
+
+    🛠 More test coverage and Better Exception Handling
+
+    
